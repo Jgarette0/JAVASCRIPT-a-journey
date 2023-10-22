@@ -70,15 +70,15 @@ addToCart.forEach((button) => {
     const productId = button.dataset.productId;
 
 
-    let sameItem;
+    let marchingItem;
     cart.forEach((item)=>{
         if(productId === item.productId){
-          sameItem = item;
+          marchingItem = item;
         }
     });
 
-    if(sameItem){
-      sameItem.quantity += 1;
+    if(marchingItem){
+      marchingItem.quantity += 1;
     } 
     else {
       cart.push ({
@@ -86,7 +86,23 @@ addToCart.forEach((button) => {
         quantity : 1
       });
     }
-   
+    
+
+    let cartQuantity = 0;
+
+    cart.forEach((item) =>{
+
+      cartQuantity += item.quantity;
+
+    });
+
+
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
+    console.log(cartQuantity);
     console.log(cart);
+
+
+
   });
 });
