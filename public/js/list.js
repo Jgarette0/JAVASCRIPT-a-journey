@@ -1,18 +1,26 @@
-const elem = (tag) => document.createElement(tag);
+function app(state, output){
 
-const el = R.compose(
-     addClass('bob'),
-     addClass('foo')
+  const appendFunctions = state.map(function(content, index){
+      return append(compose(content, index));
+  });
 
+  R.pipe(
+   ...appendFunctions
+  )(output);
 
-)( elem('div'));
-
-document.body.appendChild(el);
-
- function addClass(className){
- return function(element) {
-  element.classList.add(className);
-
-  return element;
- }
 }
+
+
+ function compose(content,index){
+ return R.compose(
+  append(text(content)),
+  addClass('hello'),
+  attribute('id', 'foo')
+ )(element('div'));
+}
+
+app(
+ Object.freeze(['Hello World', 'This is real']),
+ getId('messege-list')
+);
+//document.body.appendChild(compose('Hello World'));
