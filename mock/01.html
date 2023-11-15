@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <p>Life is not that short to be on a rush.</p>
+  <button class="submit">submit</button>
+
+  <script>
+    const submit = document.querySelector('button.submit');
+
+    submit.addEventListener('click', () => {
+      submit.innerHTML = 'Loading...';
+
+      setTimeout(() => {
+        submit.innerHTML = 'submitted';
+      
+        setTimeout(() => {
+          if (submit.innerHTML === 'submitted') {
+            submit.innerHTML = 'submit';
+          }
+        }, 2000);
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>

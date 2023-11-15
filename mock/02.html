@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Test</title>
+		</head>
+		<body>
+			<script>
+			
+			const classrooms = [{
+				image: 'image1.jpg',
+				name: 'Lecture room'
+			}, 
+			{
+				image: 'image2.jpg',
+				name: 'Computer Laboratory'
+			},
+			{
+				
+				image: 'image3.jpg',
+				name: 'TVL room'
+			}];
+
+			classrooms.forEach((classrooms) => {
+						const html = `
+						
+						<div class="div1">
+    <div class="diva"><img src="${classrooms.image}" alt="example" class="img1"></div>
+    <div class="divb">
+      <div class="classroom-name">${classrooms.name}</div>
+      <div class="status">
+      <div><img src="images/vacant-icon.svg" alt="example" class="vacant" id="vacant"></div>
+      <label class="l-vacant"for="vacant">vacant</label>
+    </div>
+    </div>
+  </div>
+
+						`;
+
+						console.log(html);
+			});
+			</script>               
+		</body>
+	</html> 
+
