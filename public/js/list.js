@@ -1,26 +1,42 @@
-function app(state, output){
+function app(state,output,dispatch){
+  
+  R.compose(
 
-  const appendFunctions = state.map(function(content, index){
-      return append(compose(content, index));
-  });
-
-  R.pipe(
-   ...appendFunctions
+    append(view(state)),
+    clear()
   )(output);
 
+const stop = dispatch((e)=> {
+  stop();
+  const newText = getText();
+  const newState = [
+    ...state,
+    newText
+  ];
+
+  setText('');
+  app(newState,output,dispatch);
+});
 }
 
+function view(state){
+  const el = create('div');
 
- function compose(content,index){
- return R.compose(
-  append(text(content)),
-  addClass('hello'),
-  attribute('id', 'foo')
- )(element('div'));
+  return state.length > 0 ? R.pipe(
+    ... state.map((content,index)=>append(generate(content,index)))
+  )(create('div')): el;
+}
+function generate(content, index){
+  return R.compose(
+    append(messege(content)),
+    addClass('todo'),
+    attr('id', index)
+  )(create('div'));
 }
 
+const buttonClick = on('click', getElem('submit'));
 app(
- Object.freeze(['Hello World', 'This is real']),
- getId('messege-list')
+  Object.freeze([]),
+  getElem('todo-list'),
+  buttonClick
 );
-//document.body.appendChild(compose('Hello World'));

@@ -1,12 +1,18 @@
-const element = (tag) => document.createElement(tag);
-const text = (isSomeText) => document.createTextNode(isSomeText);
-const getId = id => document.getElementById('messege-list');
+const create = element => document.createElement(element);
+const messege = text => document.createTextNode(text);
+const getElem = id => document.getElementById(id);
+const getText = () => getElem('text').value;
+const setText = (value) => getElem('text').value = value;
 
-const append = R.curry(function(text, element){
- element.appendChild(text);
+const on = R.curry(function(eventType, element, fn){
+ element.addEventListener(eventType, fn);
 
- return element;
+ return function(){
+  element.removeEventListener(eventType, fn);
+ }
+
 });
+
 
 const addClass = R.curry(function(className, element){
  element.classList.add(className);
@@ -14,8 +20,20 @@ const addClass = R.curry(function(className, element){
  return element;
 });
 
-const attribute = R.curry(function(attributeName, attributeValue, element){
- element.setAttribute(attributeName, attributeValue);
+const append = R.curry(function(content, element){
+element.appendChild(content);
 
 return element;
+});
+
+const attr = R.curry(function(attrName, attrValue, element){
+ element.setAttribute(attrName, attrValue);
+
+ return element;
+});
+
+const clear = R.curry((element) => {
+ element.innerHTML = '';
+
+ return element;
 });
