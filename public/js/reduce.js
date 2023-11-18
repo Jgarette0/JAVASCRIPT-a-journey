@@ -1,18 +1,19 @@
-let numbers = [1,2,3,4,5];
-let total = 0;
+// let numbers = [1,2,3,4,5];
+// // let total = 0;
 
-for(i = 0; i < numbers.length; i++){
-  total = total + numbers[i];
-}
+// // for(i = 0; i < numbers.length; i++){
+// //   total = total + numbers[i];
+// // }
 
-console.log(total);
+// let total2 = numbers.reduce((total, number)=> total + number, 1);
+
+// console.log(total2);
 
 function app(state,output){
   R.compose(
     append(view(state)),
     clear()
   )(output);
- 
  }
 
  
@@ -21,14 +22,12 @@ function app(state,output){
  }
  
  function view(state){
- const element  = tag('div');
- const add = R.flip(append)(element);
- state
- .filter(person=>person.age > 30)
- .map(human)
- .forEach(add);
+ const add = R.flip(append);
+ return state
+    .filter(person=>person.age > 30)
+    .map(human)
+    .reduce(add, tag('div'));
 
- return element;
  }
 
  const human = (person,index) => {
