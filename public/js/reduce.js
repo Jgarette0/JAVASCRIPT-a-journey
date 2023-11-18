@@ -1,3 +1,11 @@
+let numbers = [1,2,3,4,5];
+let total = 0;
+
+for(i = 0; i < numbers.length; i++){
+  total = total + numbers[i];
+}
+
+console.log(total);
 
 function app(state,output){
   R.compose(
@@ -8,14 +16,17 @@ function app(state,output){
  }
 
  
- function fullName ({firstname, lastname}){
-  return `${firstname} ${lastname}`;
+ function fullName ({firstname, lastname, age}){
+  return `${firstname} ${lastname} (${age})`;
  }
  
  function view(state){
  const element  = tag('div');
  const add = R.flip(append)(element);
- state.map(human).forEach(add);
+ state
+ .filter(person=>person.age > 30)
+ .map(human)
+ .forEach(add);
 
  return element;
  }
