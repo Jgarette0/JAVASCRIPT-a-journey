@@ -1,5 +1,6 @@
 {
- "open": false,
- 
- }
-
+  "open": false,
+  "server": {
+    "baseDir": "./public"
+  }
+}
