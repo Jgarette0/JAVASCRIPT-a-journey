@@ -48,3 +48,4 @@ console.log(status, otherEntities);
 
 const updates = { ...otherEntities, status: "occupied" };
 console.log(updates);
+console.log({ otherEntities });
