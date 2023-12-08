@@ -35,6 +35,6 @@ gender;
 const selectAll = arr.forEach((props, index) => {
   const { name, age, gender } = props;
 
-  console.log(`I am ${name}, ${gender} ${age} years of age`);
+  console.log(`${index + 1}). I am ${name}, ${gender} ${age} years of age`);
   console.log(`this is the names: ${name}`);
 });
