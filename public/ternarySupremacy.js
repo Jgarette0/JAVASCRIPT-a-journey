@@ -23,3 +23,9 @@ const baby = (babayPa) => "baby face";
 const age = 21;
 const consoles = age >= 18 ? gurang() : baby();
 consoles;
+
+const function1 = () => "foo";
+const function2 = () => "bob";
+
+const display = true ? function1() : function2();
+display;
