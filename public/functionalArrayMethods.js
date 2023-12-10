@@ -8,10 +8,11 @@ const books = [
   },
   {
     title: "1984",
-    numberOfPages: 328,
+    numberOfPages: 128,
     author: "George Orwell",
     genre: "Dystopian Fiction",
     publicationYear: 1949,
+    hasAward: "most viewed",
   },
   {
     title: "The Great Gatsby",
@@ -24,7 +25,7 @@ const books = [
     title: "Pride and Prejudice",
     numberOfPages: 279,
     author: "Jane Austen",
-    genre: "Romantic Fiction",
+    genre: "Romance",
     publicationYear: 1813,
   },
 ];
@@ -32,10 +33,28 @@ const books = [
 // const templateLiterals = books.map((props, index) => {
 //   return `#${index + 1}, : ${props.publicationYear} `;
 // });
-const templateLiterals = books.map(
-  (props, index) => `#${index + 1}, : ${props.publicationYear} `
-);
+// const templateLiterals = books.map(
+//   (props, index) => `#${index + 1}, : ${props.publicationYear} `
+// );
 
-const console = templateLiterals.join("");
+// const console = templateLiterals.join("");
 
-console;
+// console;
+
+// const filterBook = books.filter((props) => {
+//   const small = props.numberOfPages <= 200;
+//   const large = props.hasAward;
+//   return small && large;
+// });
+// filterBook;
+
+const romanceBook = books
+  .filter((props) => {
+    const genres = props.genre.toLowerCase();
+    return genres.includes("fiction");
+  })
+  .map((props) => {
+    return props.title;
+  });
+
+romanceBook;
