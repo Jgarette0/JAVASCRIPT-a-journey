@@ -35,7 +35,6 @@ const Manwhas = [
     genre: ["Time Travel", "Fantasy", "Romance"],
   },
 ];
-N;
 
 const [object1, object2, object3, object4, object5] = Manwhas;
 
