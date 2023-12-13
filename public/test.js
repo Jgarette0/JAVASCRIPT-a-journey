@@ -46,3 +46,5 @@ console.log(combine);
 const update = { ...rest, role: "Software Engineer" };
 console.log(update);
 console.log(update.role);
+
+//test
