@@ -21,6 +21,7 @@ function myOutfit() {
 }
 
 console.log(myOutfit());
+console.log(myOutfit());
 
 // You should not change the value of the global outerWear.
 // Waiting:myOutfit should return the string sweater.
