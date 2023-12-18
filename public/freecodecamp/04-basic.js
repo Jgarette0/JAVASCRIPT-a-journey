@@ -10,3 +10,4 @@ function testLogicalAnd(val) {
 }
 
 console.log(testLogicalAnd(27));
+functi;

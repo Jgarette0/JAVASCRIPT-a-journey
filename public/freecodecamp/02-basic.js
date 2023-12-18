@@ -22,7 +22,7 @@ console.log(greet("hello"));
 //passing 2 arg, ? callback?
 
 function salutation(salutate) {
-  return salutate; //salutation('hello') output: hello
+  return salutate; //salutation('hello') output:
 }
 
 function name(salutate, yourName) {
