@@ -13,3 +13,4 @@ function deym(myMin, myMax) {
 }
 
 console.log(deym(4, 6));
+//XMAS
