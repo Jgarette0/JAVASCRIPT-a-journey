@@ -19,4 +19,3 @@ function makeList(arr) {
 
 const failuresList = makeList(result.failure);
 
-//to do
