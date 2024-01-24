@@ -25,3 +25,4 @@ temp = thermos.temperature; // 26 in Celsius
 // Passed:A getter should be defined.
 // Passed:A setter should be defined.
 // Passed:Calling the setter with a Celsius value should set the temperature.
+//wew
