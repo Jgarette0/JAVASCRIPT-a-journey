@@ -1,4 +1,4 @@
-//es6 final
+//es6 finals
 //getters and setters.
 // Only change code below this line
 class Thermostat {
