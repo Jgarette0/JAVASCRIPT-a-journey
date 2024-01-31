@@ -33,3 +33,4 @@ temp = thermos.temperature; // 26 in Celsius
 
 
 >>>>>>> 8c25d9e4cd8ad152b2e260ef589629a1a8dc69b1
+//new
