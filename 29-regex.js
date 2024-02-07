@@ -1,11 +1,7 @@
-let quoteSample =
-  "Beware of bugs in the above code; I have only proved it correct, not tried it.";
-let vowelRegex = /[aiu]/gi; // Change this line
-let result = quoteSample.match(vowelRegex); // Change this line
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
 
-// You should find all 25 vowels.
-// Waiting:Your regex vowelRegex should use a character class.
-// Waiting:Your regex vowelRegex should use the global flag.
-// Waiting:Your regex vowelRegex should use the case insensitive flag.
-// Waiting:Your regex should not match any consonants.
-//new
+console.log(result);
+
+//.test() will return true if the param if not empty, if the parameter is empty it returns false
