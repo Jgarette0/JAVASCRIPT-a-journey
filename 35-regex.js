@@ -10,7 +10,7 @@ let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i; // Change this line
 let result = userCheck.test(username);
 
 console.log(result);
-
+//kek
 // Waiting:Your regex should match the string JACK
 // Waiting:Your regex should not match the string J
 // Waiting:Your regex should match the string Jo
