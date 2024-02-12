@@ -19,6 +19,7 @@ let users = {
 
 function isEveryoneHere(userObj) {
   // Only change code below this line
+  return "Alan" in userObj ? true : false;
   // Only change code above this line
 }
 
