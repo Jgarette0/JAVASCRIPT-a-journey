@@ -1,15 +1,19 @@
-function mutation(arr) {
-  const test = arr[1].toLowerCase();
-  const target = arr[0].toLowerCase();
-  for (let i = 0; i < test.length; i++) {
-    if (target.indexOf(test[i]) < 0) {
-      return false;
+function chunkArrayInGroups(arr, size) {
+  let temp = [];
+  const result = [];
+
+  for (let a = 0; a < arr.length; a++) {
+    if (a % size !== size - 1) temp.push(arr[a]);
+    else {
+      temp.push(arr[a]);
+      result.push(temp);
+      temp = [];
     }
   }
-  return true;
-}
 
-console.log(mutation(["hello", "hey"]));
+  if (temp.length !== 0) result.push(temp);
+  return result;
+}
 
 // Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
 
