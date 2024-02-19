@@ -16,3 +16,4 @@ Dog.prototype = Object.create(Animal.prototype);
 
 let beagle = new Dog();
 console.log(beagle.eat());
+let gold = new Dog();
