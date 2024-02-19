@@ -1,10 +1,9 @@
 function Car() {}
+function Supra() {}
 
 Car.prototype.sound = function () {
   console.log(`Tutu tutu tututu tututututu`);
 };
-
-function Supra() {}
 
 Supra.prototype = Object.create(Car.prototype);
 Supra.prototype.constructor = Supra;
