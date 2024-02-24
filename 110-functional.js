@@ -5,6 +5,7 @@ const squareList = (arr) => {
       return typeof item === "number" && item % 1 === 0 && item > 0;
     })
     .map((item) => {
+      lo;
       return item * item;
     });
 
