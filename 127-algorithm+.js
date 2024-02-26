@@ -19,3 +19,4 @@ console.log(sumFibs(1000)); // Output: 1785
 
 //not my code
 //i dont understand the fibonacci and its formula
+//1
