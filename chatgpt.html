@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenAI GPT Demo</title>
+  </head>
+  <body>
+    <h1>OpenAI GPT Demo</h1>
+    <textarea id="input" rows="5" cols="50"></textarea><br />
+    <button onclick="generateResponse()">Generate Response</button>
+    <p id="output"></p>
+
+    <!-- Load the OpenAI JavaScript SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/openai/dist/openai.min.js"></script>
+
+    <script>
+      // Set your API key
+      openai.api_key = "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";
+
+      function generateResponse() {
+        const input = document.getElementById("input").value;
+        openai.Completion.create({
+          engine: "text-davinci-003",
+          prompt: input,
+          max_tokens: 50,
+        })
+          .then(function (response) {
+            const output = response.choices[0].text.trim();
+            document.getElementById("output").innerText = output;
+          })
+          .catch(function (err) {
+            console.error("Error:", err);
+          });
+      }
+    </script>
+  </body>
+</html>
